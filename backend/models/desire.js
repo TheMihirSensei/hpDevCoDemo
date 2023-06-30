@@ -30,9 +30,7 @@ Desire.hasOne(User);
 
 sequelize
   .sync()
-  .then(() => {
-    console.log("disere synce...");
-  })
+  .then(() => {})
   .catch((err) => {
     console.log("error in desire sync", err);
   });

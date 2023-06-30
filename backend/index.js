@@ -28,7 +28,6 @@ db.sequelize
 
 //intialroute
 app.get("/", (req, res) => {
-  console.log("API is up");
   res.send("Initial Route");
 });
 
