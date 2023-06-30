@@ -4,18 +4,21 @@ import { useState } from "react";
 
 export default ({
     setIsAddModalOpen,
+    onSuccess,
     isModalOpen = false,
 }) => {
     const [desire, setDesire] = useState('');
     const [messageApi, contextHolder] = message.useMessage()
 
-    const handleAdd = () => {
-        addDesireApi(desire)
+    const handleAdd = async () => {
+        await addDesireApi(desire)
         messageApi.open({
             type: "success",
             content: "Added Successfully!"
         })
+        console.log("onSuccess", onSuccess)
         setIsAddModalOpen(false)
+        await onSuccess()
     }
     const handleCancel = () => {
         setIsAddModalOpen(false)

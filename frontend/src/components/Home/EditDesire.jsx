@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 
 export default ({
     setIsEditModalOpen,
+    onSuccess,
+    desireObj,
     isModalOpen = false,
-    desireObj
 }) => {
     const [desire, setDesire] = useState(null);
     useEffect(() => {
@@ -21,6 +22,7 @@ export default ({
             type: "success",
             content: "Edit Successfully!"
         })
+        await onSuccess()
         setIsEditModalOpen(false)
     }
     //commit

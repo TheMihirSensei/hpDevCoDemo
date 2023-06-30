@@ -27,7 +27,7 @@ export default () => {
     const handleDelete = async (deleteIndex) => {
         try {
             await deleteDesireApi(deleteIndex)
-            await getAllDesireApi()
+            await getDesires()
             messageApi.open({
                 type: "success",
                 content: "Deleted Successfully!"
@@ -72,8 +72,8 @@ export default () => {
     return <div>
         {contextHolder}
         <Button className="desire-add-button" onClick={() => setIsAddModalOpen(true)} >Add</Button>
-        <AddDesire isModalOpen={isAddModalOpen} setIsAddModalOpen={setIsAddModalOpen} />
+        <AddDesire onSuccess={getDesires} isModalOpen={isAddModalOpen} setIsAddModalOpen={setIsAddModalOpen} />
         {desires && <Table dataSource={desires} columns={columns} />}
-        <EditDesire desireObj={desireEditObj} isModalOpen={isEditModalOpen} setIsEditModalOpen={setIsEditModalOpen} />
+        <EditDesire onSuccess={getDesires} desireObj={desireEditObj} isModalOpen={isEditModalOpen} setIsEditModalOpen={setIsEditModalOpen} />
     </div>
 }
