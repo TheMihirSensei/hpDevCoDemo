@@ -3,6 +3,9 @@ const app = express();
 const db = require("./models");
 const apiRoute = require("./routes");
 const cors = require("cors");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 //express middlewares
 app.use(cors());
@@ -31,6 +34,6 @@ app.get("/", (req, res) => {
 
 app.use("/api", apiRoute);
 
-app.listen(3000, (req, res) => {
+app.listen(5000, (req, res) => {
   console.log("server started");
 });

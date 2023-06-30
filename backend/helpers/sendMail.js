@@ -1,7 +1,5 @@
 const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(
-  "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"
-);
+sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
 // const msg = {
 //   to: "mihirsidhdhapura41@gmail.com", // Change to your recipient
 //   from: "mihirsidhdhapura41@gmail.com", // Change to your verified sender

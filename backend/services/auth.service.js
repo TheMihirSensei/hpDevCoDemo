@@ -131,7 +131,7 @@ const OtpSentToUser = (email, type) => {
         });
       }
 
-      if (type == "SignIn" && !userExist) {
+      if (type == "signIn" && !userExist) {
         return reject({
           message: "User is not exist with us. please sign Up!",
           status: 400,
