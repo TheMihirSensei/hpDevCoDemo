@@ -9,3 +9,5 @@ The `backend` folder contains the server-side code built with Node.js and Expres
 ## Frontend
 
 This `frontend` folder contains the UI Code built with React, react-router-dom, axios along with UI library Ant Design(antd).
+
+Note: to Authentication it's required sendGrid APIKey. after getting api key. set into `.env` file
